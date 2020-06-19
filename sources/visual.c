@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:37:33 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 20:12:27 by tima             ###   ########.fr       */
+/*   Updated: 2020/06/19 22:31:22 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		validate_options(const char *str)
 	return (0);
 }
 
-int		sdl_read_options(t_ps *push, t_op *op)
+int		sdl_read_options(t_op *op)
 {
 	char*	line;
 	int		ret;
@@ -78,7 +78,6 @@ t_op	*sdl_new_list(const char *line)
 	if (!(tmp = ft_memalloc(sizeof(t_op))))
 		return (NULL);
 	tmp->op = line;
-	
 	return (tmp);
 }
 
@@ -98,7 +97,7 @@ int		main(int argc, char **argv)
 			return(sdl_limit(&push));
 		if (!(op = ft_memalloc(sizeof(t_op))))
 			return (error_free(&push));
-		if (sdl_read_options(&push, op) == 1)
+		if (sdl_read_options(op) == 1)
 		{
 			vis_free_list(&op);
 			return (error_free(&push));

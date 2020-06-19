@@ -6,7 +6,7 @@
 #    By: tima <tima@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/07 06:07:51 by tima              #+#    #+#              #
-#    Updated: 2020/06/19 21:43:51 by tima             ###   ########.fr        #
+#    Updated: 2020/06/19 22:27:19 by tima             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,19 +66,19 @@ SDL2_LIB = -lSDL2 -lSDL2_image -lSDL2_ttf
 all: $(LIBFT) $(NAME_PS) $(NAME_CH) $(NAME_VISU)
 
 $(NAME_PS): $(TMP_PS) 
-	@$(CC) -o $(NAME_PS) $(TMP_PS) $(INCLUDES) libft/libft.a
+	@$(CC) $(СFLAGS) -o $(NAME_PS) $(TMP_PS) $(INCLUDES) libft/libft.a
 	@printf "$(CN)<< Program $(NAME_PS) created >>$(EOC)\n"
 
 $(NAME_CH): $(TMP_CH)
-	@$(CC) -o $(NAME_CH) $(TMP_CH) $(INCLUDES) libft/libft.a
+	@$(CC) $(СFLAGS) -o $(NAME_CH) $(TMP_CH) $(INCLUDES) libft/libft.a
 	@printf "$(CN)<< Program $(NAME_CH) created >>$(EOC)\n"
 
 $(NAME_VISU): $(TMP_VISU)
-	@$(CC) -o $(NAME_VISU) $(TMP_VISU) $(INCLUDES) $(SDL2_LIB) libft/libft.a
+	@$(CC) $(СFLAGS) -o $(NAME_VISU) $(TMP_VISU) $(INCLUDES) $(SDL2_LIB) libft/libft.a
 	@printf "$(CN)<< Program $(NAME_VISU) created >>$(EOC)\n"
 
 %.o: %.c $(HEADER) $(HEAD_VISU)
-	@$(CC) $(INCLUDES) -c $< -o $@
+	@$(CC) $(СFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
 	make -C $(LIB_DIR)

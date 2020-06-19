@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 22:34:59 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 20:52:26 by tima             ###   ########.fr       */
+/*   Updated: 2020/06/19 22:32:16 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	sdl_memdel(SDL_Surface **surf, SDL_Texture **text)
 
 void	sdl_quit(t_sdl *d, t_ps *push, t_op *op)
 {
+	SDL_DestroyTexture(d->background);
 	SDL_DestroyRenderer(d->rend);
 	SDL_DestroyWindow(d->window);
 	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
-
 	vis_free_list(&op);
 	correct_free(push);
 }
