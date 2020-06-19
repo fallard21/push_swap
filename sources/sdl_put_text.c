@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 17:51:16 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 20:22:48 by tima             ###   ########.fr       */
+/*   Updated: 2020/06/19 22:14:31 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sdl_title(t_sdl *d)
 {
 	int len;
 
-	if (!(d->font = TTF_OpenFont("sources/ttf/15154.ttf", 200)))
+	if (!(d->font = TTF_OpenFont("sources/data/15154.ttf", 200)))
 		ft_exit(d, 1);
 	d->color = (SDL_Color){110, 110, 250, 1};
 	if (!(d->area = TTF_RenderText_Blended(d->font, "Push_swap visualizer", d->color)))
@@ -66,7 +66,7 @@ void	sdl_put_op(t_sdl *d)
 	str = ft_itoa(d->operations);
 	if (!(str = ft_strjoin_free("Operations: ", str)))
 		ft_exit(d, 4);
-	if (!(d->font = TTF_OpenFont("sources/ttf/19440.ttf", 200)))
+	if (!(d->font = TTF_OpenFont("sources/data/19440.ttf", 200)))
 		ft_exit(d, 1);
 	d->color = (SDL_Color){230, 20, 230, 1};
 	if (!(d->area = TTF_RenderText_Blended(d->font, str, d->color)))

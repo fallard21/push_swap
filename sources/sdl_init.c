@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 22:30:50 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 19:44:31 by tima             ###   ########.fr       */
+/*   Updated: 2020/06/19 22:14:13 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	sdl_init_cube(t_sdl *draw, t_ps *push)
 
 void	sdl_background(t_sdl *draw)
 {
-	draw->background = IMG_LoadTexture(draw->rend, "sources/images/pic_1_(14).jpg");
+	draw->background = IMG_LoadTexture(draw->rend, "sources/data/pic_1_(14).jpg");
 	if (!draw->background)
 		ft_exit(draw, 7);
 	draw->back_rect.x = 0;
