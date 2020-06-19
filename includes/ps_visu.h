@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:38:22 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 22:34:02 by tima             ###   ########.fr       */
+/*   Updated: 2020/06/19 22:40:14 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ typedef struct s_sdl
 	const Uint8		*keyboard;
 	int				quit;
 	int				flag;
-    int             gist_x;
-	int             gist_h;
-	int             diff_x;
-    int             operations;
+	int				gist_x;
+	int				gist_h;
+	int				diff_x;
+	int				operations;
 }					t_sdl;
 
 typedef	struct s_op
