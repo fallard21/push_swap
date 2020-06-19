@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 06:08:42 by tima              #+#    #+#             */
-/*   Updated: 2020/06/11 12:44:35 by tima             ###   ########.fr       */
+/*   Updated: 2020/06/19 22:56:00 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ int	main(int argc, char **argv)
 		presorting(&push);
 		start_sorting(&push);
 		normalize_stack(&push, push.stack_A->next);
-			//ft_printf("Operations: %d\n", push.operations); // DEL
-			//int n = is_sort(push.stack_A->next); // DEL
-			//(n == 0) ? ft_printf("{2}SORTED{0}\n") : ft_printf("{1}NO SORTED{0}\n"); // DEL
 		correct_free(&push);
 	}
 	return (0);
