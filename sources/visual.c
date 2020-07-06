@@ -6,35 +6,35 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:37:33 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 22:31:22 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 18:55:28 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_visu.h"
 
 void	do_operations_1(const char *line, t_ps *push)
-{	
-	t_stack *stack_A;
-	t_stack *stack_B;
+{
+	t_stack *stack_a;
+	t_stack *stack_b;
 
-	stack_A = push->stack_A;
-	stack_B = push->stack_B;
+	stack_a = push->stack_a;
+	stack_b = push->stack_b;
 	if (ft_strcmp("sa", line) == 0 || ft_strcmp("ss", line) == 0)
-		do_sa_sb(stack_A, push->size_A);
+		do_sa_sb(stack_a, push->size_a);
 	if (ft_strcmp("sb", line) == 0 || ft_strcmp("ss", line) == 0)
-		do_sa_sb(stack_B, push->size_B);
+		do_sa_sb(stack_b, push->size_b);
 	if (ft_strcmp("pa", line) == 0)
-		do_pa(push, stack_A, stack_B);
+		do_pa(push, stack_a, stack_b);
 	if (ft_strcmp("pb", line) == 0)
-		do_pb(push, stack_B, stack_A);
+		do_pb(push, stack_b, stack_a);
 	if (ft_strcmp("ra", line) == 0 || ft_strcmp("rr", line) == 0)
-		do_ra_rb(stack_A, push->size_A);
+		do_ra_rb(stack_a, push->size_a);
 	if (ft_strcmp("rb", line) == 0 || ft_strcmp("rr", line) == 0)
-		do_ra_rb(stack_B, push->size_B);
+		do_ra_rb(stack_b, push->size_b);
 	if (ft_strcmp("rra", line) == 0 || ft_strcmp("rrr", line) == 0)
-		do_rra_rrb(stack_A, push->size_A);
+		do_rra_rrb(stack_a, push->size_a);
 	if (ft_strcmp("rrb", line) == 0 || ft_strcmp("rrr", line) == 0)
-		do_rra_rrb(stack_B, push->size_B);
+		do_rra_rrb(stack_b, push->size_b);
 }
 
 int		validate_options(const char *str)
@@ -53,11 +53,11 @@ int		validate_options(const char *str)
 
 int		sdl_read_options(t_op *op)
 {
-	char*	line;
+	char	*line;
 	int		ret;
 
 	line = NULL;
-	while((ret = get_next_line(0, &line)) > 0)
+	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if (ret < 0 || validate_options(line) == 1)
 		{
@@ -91,10 +91,10 @@ int		main(int argc, char **argv)
 	{
 		if (create_stacks(&push, argc, argv) == 1)
 			return (error_free(&push));
-		if (duplicate_found(push.stack_A->next) == 1)
+		if (duplicate_found(push.stack_a->next) == 1)
 			return (error_free(&push));
 		if (push.size > 500)
-			return(sdl_limit(&push));
+			return (sdl_limit(&push));
 		if (!(op = ft_memalloc(sizeof(t_op))))
 			return (error_free(&push));
 		if (sdl_read_options(op) == 1)

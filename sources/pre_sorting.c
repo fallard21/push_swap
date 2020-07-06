@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 10:12:58 by tima              #+#    #+#             */
-/*   Updated: 2020/06/11 12:36:18 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 18:52:00 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	search_limits(t_ps *push)
 {
 	t_stack	*tmp;
 
-	tmp = push->stack_A->next;
+	tmp = push->stack_a->next;
 	push->min = tmp->elem;
 	push->max = tmp->elem;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->elem > push->max)
 			push->max = tmp->elem;
@@ -48,13 +48,13 @@ void	presorting_diff(t_ps *push, int diff)
 	int	i;
 	int	elem;
 
-	while (push->size_A > diff)
+	while (push->size_a > diff)
 	{
-		mid = mid_value(push, push->stack_A->next);
+		mid = mid_value(push, push->stack_a->next);
 		i = 0;
-		while (i < push->size_A)
+		while (i < push->size_a)
 		{
-			elem = push->stack_A->next->elem;
+			elem = push->stack_a->next->elem;
 			if (elem <= mid && elem != push->max && elem != push->min)
 				do_operations("pb", push);
 			else
@@ -64,28 +64,27 @@ void	presorting_diff(t_ps *push, int diff)
 	}
 }
 
-int		mid_value(t_ps *push, t_stack *stack_A)
+int		mid_value(t_ps *push, t_stack *stack_a)
 {
 	int mid;
 
 	mid = 0;
-	while(stack_A)
+	while (stack_a)
 	{
-		if (stack_A->elem != push->max && stack_A->elem != push->min)
-			mid = mid + stack_A->elem;
-		stack_A = stack_A->next;
+		if (stack_a->elem != push->max && stack_a->elem != push->min)
+			mid = mid + stack_a->elem;
+		stack_a = stack_a->next;
 	}
-	mid = mid / (push->size_A - 2);
+	mid = mid / (push->size_a - 2);
 	return (mid);
 }
 
 void	push_all_to_b(t_ps *push)
 {
-	t_stack *tmp;
-	
-	tmp = push->stack_A;
+	t_stack	*tmp;
 
-	while(push->size_A != 2)
+	tmp = push->stack_a;
+	while (push->size_a != 2)
 	{
 		if (tmp->next->elem == push->max || tmp->next->elem == push->min)
 			do_operations("ra", push);

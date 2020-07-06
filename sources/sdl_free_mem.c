@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 22:34:59 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 22:32:16 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 18:55:53 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	vis_free_list(t_op **head)
 {
 	t_op	*next;
 
-	while(*head)
+	while (*head)
 	{
 		next = (*head)->next;
 		ft_memdel((void**)&(*head)->op);

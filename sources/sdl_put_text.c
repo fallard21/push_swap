@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 17:51:16 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 22:14:31 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 19:49:00 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	sdl_title(t_sdl *d)
 	if (!(d->font = TTF_OpenFont("sources/data/15154.ttf", 200)))
 		ft_exit(d, 1);
 	d->color = (SDL_Color){110, 110, 250, 1};
-	if (!(d->area = TTF_RenderText_Blended(d->font, "Push_swap visualizer", d->color)))
+	if (!(d->area = TTF_RenderText_Blended(d->font, \
+		"Push_swap visualizer", d->color)))
 		ft_exit(d, 2);
 	if (!(d->fontex = SDL_CreateTextureFromSurface(d->rend, d->area)))
 		ft_exit(d, 3);
@@ -37,7 +38,7 @@ void	sdl_result(t_sdl *d, t_ps *push)
 
 	d->flag = 0;
 	sdl_memdel(&d->area, &d->fontex);
-	res = (is_sort(push->stack_A->next) || push->size_B) ? "KO" : "OK";
+	res = (is_sort(push->stack_a->next) || push->size_b) ? "KO" : "OK";
 	if (!ft_strcmp("OK", res))
 		d->color = (SDL_Color){0, 255, 0, 1};
 	else
