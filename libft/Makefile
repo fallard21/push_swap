@@ -6,7 +6,7 @@
 #    By: tima <tima@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/07 15:43:25 by fallard           #+#    #+#              #
-#    Updated: 2020/06/19 21:15:17 by tima             ###   ########.fr        #
+#    Updated: 2020/06/22 18:03:51 by tima             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ ft_isdigit.c \
 ft_isprint.c \
 ft_itoa.c \
 ft_memalloc.c \
+ft_calloc.c \
 ft_memccpy.c \
 ft_memchr.c \
 ft_memcmp.c \

@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 15:50:43 by fallard           #+#    #+#             */
-/*   Updated: 2020/06/16 13:20:29 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 20:19:20 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@
 # include "ft_printf.h"
 
 /*
-** >>-------------------------------<< MEMORY >>-------------------------------<<
+** >>------------------------------<< MEMORY >>-------------------------------<<
 */
 void				*ft_memalloc(size_t size);
+void				*ft_calloc(size_t num, size_t size);
 void				ft_memdel(void **ap);
 void				*ft_memset(void *dest, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -35,7 +36,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				ft_swap(int *a, int *b);
 
 /*
-** >>-------------------------------<< STRING >>-------------------------------<<
+** >>------------------------------<< STRING >>-------------------------------<<
 */
 size_t				ft_strlen(const char *str);
 char				*ft_strdup(const char *s);
