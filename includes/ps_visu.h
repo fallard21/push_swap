@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:38:22 by tima              #+#    #+#             */
-/*   Updated: 2020/06/19 22:40:14 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 18:39:12 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define DIS_X 40
 # define DIS_Y 40
 
-typedef struct s_sdl
+typedef struct		s_sdl
 {
 	SDL_Window		*window;
 	SDL_Renderer	*rend;
@@ -47,7 +47,7 @@ typedef struct s_sdl
 	int				operations;
 }					t_sdl;
 
-typedef	struct s_op
+typedef	struct		s_op
 {
 	struct s_op		*next;
 	const char		*op;
@@ -70,12 +70,12 @@ void				sdl_title(t_sdl *d);
 /*
 ** >-----------------------------< DRAWING >-----------------------------<
 */
-void				sdl_init_index(t_ps *push, t_stack *A);
+void				sdl_init_index(t_ps *push, t_stack *a);
 void				do_draw(t_sdl *d, t_ps *push, t_op *op);
 void				sdl_main_loop(t_sdl *d, t_ps *push, t_op *op);
 void				sdl_draw_stacks(t_sdl *d, t_ps *push);
-void				sdl_draw_A(t_sdl *d, t_ps *push);
-void				sdl_draw_B(t_sdl *d, t_ps *push);
+void				sdl_draw_a(t_sdl *d, t_ps *push);
+void				sdl_draw_b(t_sdl *d, t_ps *push);
 
 /*
 ** >---------------------------< PUT RESULTS >---------------------------<
