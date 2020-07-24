@@ -18,7 +18,7 @@ NAME_HEADER = push_swap.h
 NAME_HVISU = ps_visu.h
 NAME_LIB = libft.a
 
-CC = gcc -g
+CC = gcc
 СFLAGS = -Wall -Wextra -Werror
 
 SRC_PS = push_swap.c \
@@ -65,15 +65,15 @@ SDL2_LIB = -lSDL2 -lSDL2_image -lSDL2_ttf
 
 all: $(LIBFT) $(NAME_PS) $(NAME_CH) $(NAME_VISU)
 
-$(NAME_PS): $(TMP_PS) 
+$(NAME_PS): $(LIBFT) $(TMP_PS) 
 	@$(CC) $(СFLAGS) -o $(NAME_PS) $(TMP_PS) $(INCLUDES) libft/libft.a
 	@printf "$(CN)<< Program $(NAME_PS) created >>$(EOC)\n"
 
-$(NAME_CH): $(TMP_CH)
+$(NAME_CH): $(LIBFT) $(TMP_CH)
 	@$(CC) $(СFLAGS) -o $(NAME_CH) $(TMP_CH) $(INCLUDES) libft/libft.a
 	@printf "$(CN)<< Program $(NAME_CH) created >>$(EOC)\n"
 
-$(NAME_VISU): $(TMP_VISU)
+$(NAME_VISU): $(LIBFT) $(TMP_VISU)
 	@$(CC) $(СFLAGS) -o $(NAME_VISU) $(TMP_VISU) $(INCLUDES) $(SDL2_LIB) libft/libft.a
 	@printf "$(CN)<< Program $(NAME_VISU) created >>$(EOC)\n"
 
