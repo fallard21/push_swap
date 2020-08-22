@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_put_text.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 17:51:16 by tima              #+#    #+#             */
-/*   Updated: 2020/07/06 19:49:00 by tima             ###   ########.fr       */
+/*   Updated: 2020/08/22 20:55:33 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	sdl_put_op(t_sdl *d)
 	char	*str;
 
 	str = ft_itoa(d->operations);
-	if (!(str = ft_strjoin_free("Operations: ", str)))
+	if (!(str = ft_strjoin_free("Operations: ", str, 2)))
 		ft_exit(d, 4);
 	if (!(d->font = TTF_OpenFont("sources/data/19440.ttf", 200)))
 		ft_exit(d, 1);
@@ -83,4 +83,5 @@ void	sdl_put_op(t_sdl *d)
 	sdl_memdel(&d->area, &d->fontex);
 	TTF_CloseFont(d->font);
 	d->font = NULL;
+	free(str);
 }
